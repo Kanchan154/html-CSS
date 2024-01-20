@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<style>
+
+
+    body{
+        align-items: center;
+    }
+    #About{
+        background-color: yellow;
+        text-align: center;
+        padding: 100px 100px 100px 100px;
+        line-height: 200% ;
+        margin-left: 200px;
+        height: 800px;
+        width: 600px;
+        margin-right: 40px;
+    }
+    span{
+        font-size: 22px;
+    }
+    label{
+        font-size: 22px;
+    }
+
+    input{
+        padding: 10px 10px 10px 10px;
+        align-content: center;
+        margin: 20px 20px 20px 20px;
+    }
+
+</style>
+<body>
+    <div id="About">
+        <h1>BMI Calculator</h1>
+        <label for="">Height in CM:</label>
+        <input type="text"><br><br>
+        <label for="">Weight in Kg: </label>
+        <input type="text"><br><br>
+        <select onchange="Choose(value)" id="" style="padding: 10px 10px 10px 10px;align-content: center;margin: 20px 20px 20px 20px;font-size: 20px;"><br><br>
+            <option disabled selected>Select Gender</option> 
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br><br>
+        <label for="" style="margin-right: 20px;margin-left:30px;">Result :</label>
+        <input readonly="text"><br><br>
+        <button onclick="calculate(value)" style="background-color: rgb(66, 66, 240); font-size: 30px; margin-top: 10px; padding: 5px 15px 5px 15px; border-radius: 8px; color: whitesmoke;">Calculate</button><br><br>
+        
+
+        <!-- <button onclick="calculate()"></button> -->
+        <span id="Print"></span>
+        
+        <Script>
+
+        let b = document.querySelector("select");
+        let calculate=(value)=>{
+            let a=document.querySelectorAll("input");
+            a[2].value=Number.parseFloat(a[1].value) *10000 / (Number.parseFloat(a[0].value)*Number.parseFloat(a[0].value))
+
+            if(b.value=="male"){
+                if(a[2].value<=19.6){
+                document.querySelector("span").innerText=("Under waight");
+                }
+                else if(a[2].value>19.6 && a[2].value <= 25.9){
+                    document.querySelector("span").innerText=("Normal");
+                }
+                else if(a[2].value>25.9){
+                    document.querySelector("span").innerText=("Over Waight");
+                }
+            }
+            if(b.value=="female"){
+                if(a[2].value<=18.5){
+                document.querySelector("span").innerText=("Under waight");
+                }
+                else if(a[2].value>18.5 && a[2].value <= 24.9){
+                    document.querySelector("span").innerText=("Normal");
+                }
+                else if(a[2].value>24.9){
+                    document.querySelector("span").innerText=("Over Waight");
+                }
+            }
+            
+        }
+        </Script>
+
+    </div>
+    
+</body>
+</html>
