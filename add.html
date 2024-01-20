@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add</title>
+</head>
+<body>
+    <label for=>Number 1</label>
+    <input type="text"><br>
+    <label for=>Number 2</label>
+    <input type="text"><br>
+    
+    <select onchange="calculate(value)" id="">
+        <option disabled selected value="">select a value</option>
+        <option value="add">addition</option>
+        <option value="sub">subtraction</option>
+        <option value="mult">multiplication</option>
+        <option value="div">division</option>
+    </select><br>
+    <label for=>Result</label>
+    <input readonly="text"><br>
+    <button onclick="calculate(value)">Click me</button>
+   
+</body>
+<script>
+    let calculate=(value)=>{
+    // let add=()=>{
+    let a=document.querySelectorAll("input");
+    if(value=="add"){
+    a[2].value=Number.parseInt(a[0].value)+Number.parseInt(a[1].value)}
+    else if(value=="sub"){
+    a[2].value=Number.parseInt(a[0].value)-Number.parseInt(a[1].value)}
+    else if(value=="mult"){
+    a[2].value=Number.parseInt(a[0].value)*Number.parseInt(a[1].value)}
+    else if(value=="div"){
+    a[2].value=Number.parseInt(a[0].value)/Number.parseInt(a[1].value)}
+
+    }
+</script>
+</html>
